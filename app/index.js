@@ -56,7 +56,7 @@ var FlatGenerator = yeoman.generators.Base.extend({
     this.copy('_index.html', 'app/index.html');
     this.copy('_bower.json', 'bower.json');
     this.copy('_appjs', 'public/js/app.js');
-    this.copy('_main.styl', 'public/css/main.css');
+    this.copy('_main.styl', 'public/css/main.styl');
     this.copy('_Gruntfile.js', 'Gruntfile.js');
   },
 
