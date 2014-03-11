@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "dependencies": {
     "lodash": "latest",
-    "jquery": "~1.11.0"<% if (options.backbone) { %>,
+    "jquery": "~2.1.0"<% if (options.backbone) { %>,
     "backbone": "latest"<% } %><% if (options.browserify){ %>,
     "browserify": "latest"<% } %>
   },
+  "scripts": {
+    "start": "grunt"
+  }
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-connect": "latest",

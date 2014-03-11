@@ -8,6 +8,7 @@ var FlatGenerator = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
 
+    this.options.backbone = this.options.browserify = true;
     this.on('end', function () {
       if (!this.options['skip-install']) {
         this.npmInstall();
@@ -21,30 +22,35 @@ var FlatGenerator = yeoman.generators.Base.extend({
     // have Yeoman greet the user
     console.log(this.yeoman);
 
-    // replace it with a short and sweet description of your generator
+    console.log(chalk.magenta('_____________________________'));
     console.log(chalk.magenta('Flat: simple html boilerplate'));
+    console.log(chalk.magenta('_____________________________'));
 
-    var prompts = [
-      {
-        type: 'confirm',
-        name: 'backbone',
-        message: 'Install backbone and dependencies?',
-        default: true
-      },
-      {
-        type: 'confirm',
-        name: 'browserify',
-        message: 'Use browserify to handle dependencies?',
-        default: true
-      }
-    ];
+    // answering prompts is boring.
+    done();
 
-    this.prompt(prompts, function (props) {
-      this.options.backbone = props.backbone;
-      this.options.browserify = props.browserify;
-
-      done();
-    }.bind(this));
+// @todo @nick bring these back in with more helpful options?
+//     var prompts = [
+//       {
+//         type: 'confirm',
+//         name: 'backbone',
+//         message: 'Install backbone and dependencies?',
+//         default: true
+//       },
+//       {
+//         type: 'confirm',
+//         name: 'browserify',
+//         message: 'Use browserify to handle dependencies?',
+//         default: true
+//       }
+//     ];
+//
+//     this.prompt(prompts, function (props) {
+//       this.options.backbone = true;
+//       this.options.browserify = true;
+//
+//       done();
+//     }.bind(this));
   },
 
   app: function () {

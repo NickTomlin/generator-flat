@@ -19,7 +19,7 @@ module.exports = function (grunt) {
       dev: {
         tasks: ['connect', 'watch'],
         options: {
-          logConcurrentOutput: true
+          logConcurrentOutput: true,
         }
       }
     },
@@ -32,7 +32,7 @@ module.exports = function (grunt) {
           'nib'
         ],
         files: {
-          'dist/css/app.css': 'public/css/main.styl'
+          'dist/css/app.css': 'public/css/app.styl'
         }
       }
     },
@@ -41,7 +41,8 @@ module.exports = function (grunt) {
         files: ['public/css/**/*.styl', 'public/debug/*.styl'],
         tasks: ['stylus'],
         options: {
-          interrupt: false
+          interrupt: false,
+          livereload: true
         }
       },
       // spec: {
@@ -67,7 +68,8 @@ module.exports = function (grunt) {
         options: {
           port: 3070,
           keepalive: true,
-          base: ['dist', 'app']
+          base: ['dist', 'app'],
+          livereload: true
         }
       }
     },
