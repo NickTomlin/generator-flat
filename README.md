@@ -17,6 +17,7 @@ $ yo flat
 [ ] Templating (hbs anyone?)
 [ ] Data store (some built in flat json or api hookups)
 [ ] Default to everything (then go through the picklist if "no" is selected)
+[ ] Provide "plugins" that make swapping out a framework easier. React etc.
 
 # LICENSE
 MIT

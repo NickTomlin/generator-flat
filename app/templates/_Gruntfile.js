@@ -45,13 +45,6 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
-      // spec: {
-      //   files: 'spec/**/*_spec.js',
-      //   tasks: ['mochacli'],
-      //   options: {
-      //     interrupt: true
-      //   }
-      // },
       js: {
         files: [
           'public/js/**/*.js',
@@ -88,6 +81,11 @@ module.exports = function (grunt) {
         }
       }
     },
+    karma: {
+      options: {
+        config: 'karma.config.js'
+      }
+    },
     clean: {
       'tmp': 'tmp',
       'build': 'dist/templates',
@@ -99,18 +97,17 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-copy-to');
   grunt.loadNpmTasks('grunt-concurrent');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('build', [
     'clean:all',
     'copyto',
-    // 'i18n',
     'browserify:dev',
     'clean:tmp',
     'compass:production'

@@ -16,8 +16,7 @@
     "expect": true,
     "fake": true,
     "global": true,
-    "it": true,
-    "runs": true,
+    "it": true
   },
   "newcap": true,
   "noarg": true,

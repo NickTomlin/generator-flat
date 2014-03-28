@@ -54,21 +54,26 @@ var FlatGenerator = yeoman.generators.Base.extend({
   },
 
   app: function () {
+    // can we shortcut with mkdirp here?
     this.mkdir('public');
     this.mkdir('public/js');
     this.mkdir('public/css');
+    this.mkdir('test');
+    this.mkdir('test/unit');
 
-    this.copy('_package.json', 'package.json');
-    this.copy('_index.html', 'app/index.html');
-    this.copy('_bower.json', 'bower.json');
-    this.copy('_appjs', 'public/js/app.js');
+    this.copy('_app.js', 'public/js/app.js');
     this.copy('_app.styl', 'public/css/app.styl');
-    this.copy('_Gruntfile.js', 'Gruntfile.js');
   },
 
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
+
+    // infrastructure
+    this.copy('_package.json', 'package.json');
+    this.copy('_index.html', 'app/index.html');
+    this.copy('_bower.json', 'bower.json');
+    this.copy('_Gruntfile.js', 'Gruntfile.js');
   }
 });
 
