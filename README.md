@@ -10,15 +10,18 @@ $ npm install -g  NickTomlin/generator-flat
 Finally, initiate the generator:
 
 ```
+
+$ mkdir my-great-project
+$ cd my-great-project
+# this dumps files out into your CWD, so be cafeful :) 
 $ yo flat
 ```
 
 # TODO
 
-[ ] Templating (hbs anyone?)
-[ ] Data store (some built in flat json or api hookups)
-[ ] Default to everything (then go through the picklist if "no" is selected)
-[ ] Provide "plugins" that make swapping out a framework easier. React etc.
+- [ ] Templating (hbs anyone?)
+- [ ] Data store (some built in flat json or api hookups)
+- [ ] Provide "plugins" that make swapping out a framework easier. React etc.
 
 # LICENSE
 MIT
