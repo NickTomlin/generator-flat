@@ -1,7 +1,7 @@
 {
   "name": "generator-flat",
   "version": "0.0.0",
-  "description": "Yeoman generator",
+  "description": "Get a quick front-end application runing with backbone, styl, and browserify",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "nicktomlin/generator-flat",

@@ -19,7 +19,9 @@ describe('flat generator', function () {
 
   it('creates expected files', function (done) {
     var expected = [
-      // add files you expect to exist here.
+      'bower.json',
+      'package.json',
+      'Gruntfile.js',
       '.jshintrc',
       '.editorconfig'
     ];
@@ -30,6 +32,29 @@ describe('flat generator', function () {
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
       helpers.assertFile(expected);
+      done();
+    });
+  });
+
+  // @todo: broken fix
+  it('Inserts appName argument into files', function (done) {
+    var APP_NAME = "My Flat Generated App";
+    var APP_REGEX = new RegExp(APP_NAME);
+    var expected = [
+      'package.json',
+      'bower.json',
+      'README.md'
+    ].map(function(filename){ return [filename, APP_REGEX ] });
+
+    console.log(expected);
+
+    helpers.mockPrompt(this.app, {
+      'appName': APP_NAME
+    });
+
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFileContent(expected);
       done();
     });
   });

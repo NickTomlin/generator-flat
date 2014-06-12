@@ -1,0 +1,2 @@
+<%  print(projName ? projName : defaultProjName) %>
+---
