@@ -4,7 +4,7 @@ My browserify/stylus/nobullshit boilerplate. I use this to scratch out ideas whe
 
 ```
 # if yeoman is not installed, install him via ``npm install -g yo``
-$ npm install -g generator-flat
+$ npm install -g  NickTomlin/generator-flat
 ```
 
 Finally, initiate the generator:
@@ -14,6 +14,7 @@ $ yo flat
 ```
 
 # TODO
+
 [ ] Templating (hbs anyone?)
 [ ] Data store (some built in flat json or api hookups)
 [ ] Default to everything (then go through the picklist if "no" is selected)
